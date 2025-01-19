@@ -19,4 +19,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      external: ['@supabase/ssr'], // Externalize the @supabase/ssr module
+    },
+  },
 }));
