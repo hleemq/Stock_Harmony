@@ -7,13 +7,13 @@ WORKDIR /app
 # Copy package.json and package-lock.json (or yarn.lock) first
 COPY package*.json ./
 
-# Install dependencies
+# Install dependencies using npm
 RUN npm install
 
 # Copy the rest of the application code
 COPY . .
 
-# Build the application
+# Build the application using npm
 RUN npm run build
 
 # Use a lightweight server to serve the application
